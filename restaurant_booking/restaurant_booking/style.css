@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f4;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    background-color: white;
+    color: #ff5722;
+}
+header .logo {
+    font-weight: 600;
+    font-size: 24px;
+    margin-right: 15px;
+}
+header .book-table {
+    background-color: #ff5722;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+header #myReservationsBtn {
+    border: 1px solid #ff5722;
+    background-color: white;
+    color: #ff5722;
+    margin-right: 15px;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 15px;
+}
+.banner-collection {
+    max-width: 2000px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+.myBanner {
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+.myBanner.active {
+    transition: translateX(-100%);
+    display: block;
+}
+header .book-table {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+header .book-table:hover {
+    background-color: #e64a19;
+}
+::placeholder {
+    color: #999;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0px 0px 3px;
+}
+.prev-hover, .next-hover {
+    background-color: rgb(0, 0, 0, 0.8);
+}
+.timing {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+.title {
+    left: 0;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.blocks {
+    display: flex;
+    flex-direction: row;
+}
+.block {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-right: 30px;
+    padding: 10px 4px;
+    padding-right: 40px;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid #f4f4f4;
+}
+.block:hover {
+    border: 1px solid #555;
+}
+.block img {
+    height: 60px;
+    margin-right: 8px;
+}
+.block p {
+    margin-right: 4px;
+    font-weight: 600;
+}
+#featured-restaurants {
+    background-color: #f7f7f7;
+    text-align: center;
+    margin-top: 20px;
+}
+.restaurant-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.restaurant-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    padding-right: 25px;
+    margin: 0px 20px;
+}
+.restaurant-card img {
+    width: 100%;
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+.hotel-name {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+.hotel-address {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 5px;
+}
+.rating {
+    background: rgb(10, 186, 10);
+    color: white;
+    width: fit-content;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.book-now-btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 2px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.book-now-btn:hover {
+    background-color: #e65c00;
+}
+.reservation-block {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.reservation-block:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-block p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.reservation-block strong {
+    color: #ff5722;
+}
+
+.reservation-block {
+    position: relative;
+}
+
+.reservation-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #ff5722; 
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.delete-btn {
+    background-color: red;
+}
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.update-btn {
+    background-color: #f0ad4e;
+}
+
+.update-btn:hover {
+    background-color: #ec971f; 
+}
+
+.delete-btn {
+    background-color: #d9534f;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+.close-btn {
+    background-color: #5bc0de;
+}
+
+.close-btn:hover {
+    background-color: #31b0d5;
+}
+
+.reservation-block {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.bottom-cover {
+    margin-top: 50px;
+    background-color: #ff5722;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+  
+.cover-content p {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}  
+/* Close button (X) */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+/* Style for the login button */
+#loginBtn {
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: auto;
+}
+
+#loginBtn:hover {
+    background-color: #0056b3;
+}
+#reservationsModal {
+    overflow: scroll;
+}
+.logout-link {
+    background-color: #ff4d4d; /* Red background */
+    color: white; /* White text */
+    padding: 8px 16px; /* Add padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the link behave like a button */
+    font-size: 16px; /* Font size */
+    margin: 10px 2px; /* Margin around the link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+}
+
+/* Hover effects */
+.logout-link:hover {
+    background-color: #ff1a1a;
+}
+.greeting {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-right: auto;
+}
+.sign-up {
+    background-color: green;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+/* Common modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.modal-content input[type="text"], 
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modal-content .submit-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.modal-content p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.modal-content a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+/* Close button (X) */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+}
+
+/* Add additional styles for smooth look */
+input::placeholder {
+    color: #aaa;
+}
